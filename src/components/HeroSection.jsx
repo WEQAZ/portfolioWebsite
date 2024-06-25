@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import useRef from "react";
+
 const HeroSection = () => {
   return (
     <section>
