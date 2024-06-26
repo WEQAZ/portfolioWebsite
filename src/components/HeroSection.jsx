@@ -2,59 +2,115 @@
 import React from "react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
-import useRef from "react";
+import { Box, Button, Typography, Container, Stack } from "@mui/material";
 
 const HeroSection = () => {
   return (
-    <section>
-      <div className="grid grid-cols-1 lg:grid-cols-12">
-        <div className="col-span-7 place-self-center text-center sm:text-left">
-          <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-bold">
-            <span className="">Hello, I'm </span>
-            <br />
-            <TypeAnimation
-              sequence={[
-                // Same substring at the start will only be typed out once, initially
-                "Piyawut",
-                1500,
-                "Web Developer",
-                1500,
-                "Cyber Security",
-                1500,
-                "Software Engineer",
-                1500,
-              ]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-            />
-          </h1>
-          <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl mb-6">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet eum
-            quidem enim reprehenderit maxime, iure veniam suscipit! Sed quos,
-          </p>
-          <div>
-            <button className="px-6 py-3 rounded-full w-full sm:w-fit mr-4 bg-white hover:bg-slate-200 text-black">
-              Hire Me
-            </button>
-            <button className="px-6 py-3 mt-3 rounded-full w-full sm:w-fit bg-transparent hover:bg-state-800 text-white border border-white">
-              Download CV
-            </button>
-          </div>
-        </div>
-        <div className="col-span-5 place-self-center mt-10 lg:mt-0">
-          <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
+    <Box component="section" sx={{ mt: "50px" }}>
+      <Container maxWidth="lg">
+        <Stack
+          direction={{ xs: "column", lg: "row" }}
+          justifyContent="space-between"
+          alignItems="center"
+          spacing={4}
+        >
+          <Box
+            flex={{ lg: 7 }}
+            textAlign={{ xs: "center", sm: "left" }}
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+          >
+            <Typography
+              variant="h2"
+              sx={{ color: "#393E46", fontWeight: "bold", mb: 4 }}
+            >
+              <Box component="span" sx={{ display: "block" }}>
+                Hello, I'm
+              </Box>
+              <TypeAnimation
+                sequence={[
+                  "Piyawut",
+                  1500,
+                  "Web Developer",
+                  1500,
+                  "Cyber Security",
+                  1500,
+                  "Software Engineer",
+                  1500,
+                ]}
+                wrapper="span"
+                speed={50}
+                style={{
+                  color: "#393E46",
+                }}
+                repeat={Infinity}
+              />
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                color: "#ADB7BE",
+                fontSize: { xs: "1rem", sm: "1.125rem", lg: "1.25rem" },
+                mb: 6,
+              }}
+            >
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet eum
+              quidem enim reprehenderit maxime, iure veniam suscipit! Sed quos,
+            </Typography>
+            <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
+              <Button
+                // variant="contained"
+                sx={{
+                  px: 6,
+                  py: 3,
+                  bgcolor: "#EEEEEE",
+                  color: "#393E46",
+                  fontWeight: "700",
+                  borderRadius: "9999px",
+                  width: { xs: "100%", sm: "fit-content" },
+                }}
+              >
+                Hire Me
+              </Button>
+              <Button
+                sx={{
+                  px: 6,
+                  py: 3,
+                  borderRadius: "9999px",
+                  mt: { xs: 3, sm: 0 },
+                  color: "#393E46",
+                  border: "1px solid #393E46",
+                  width: { xs: "100%", sm: "fit-content" },
+                }}
+              >
+                Download CV
+              </Button>
+            </Stack>
+          </Box>
+          <Box
+            flex={{ lg: 5 }}
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            mt={{ xs: 10, lg: 0 }}
+          >
             <Image
-              src="/images/icePic.png"
+              src="/images/iceProfilePic1.png"
               alt="ice Image"
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              width={300}
-              height={300}
-            ></Image>
-          </div>
-        </div>
-      </div>
-    </section>
+              width={"370"}
+              height={"480"}
+              sx={{
+                position: "absolute",
+                left: "50%",
+                top: "50%",
+                // top: { xs: "64%", lg: "50%" },
+              }}
+            />
+          </Box>
+        </Stack>
+      </Container>
+    </Box>
   );
 };
 

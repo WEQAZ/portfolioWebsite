@@ -36,10 +36,9 @@ const NavBar = () => {
     setAnchorElUser(null);
   };
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+    <AppBar position="static"sx={{bgcolor:"#F7F7F7"}} >
+      <Container maxWidth="xl" >
+        <Toolbar disableGutters sx={{px:10}} >
           <Typography
             variant="h6"
             noWrap
@@ -48,14 +47,12 @@ const NavBar = () => {
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
+              color: "#393E46",
               textDecoration: "none",
             }}
           >
-            LOGO
+            PIYAWUT
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -65,7 +62,7 @@ const NavBar = () => {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              color="#393E46"
             >
               <MenuIcon />
             </IconButton>
@@ -104,10 +101,10 @@ const NavBar = () => {
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: "monospace",
+              fontFamily: "roboto",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
+              color: "#393E46",
               textDecoration: "none",
             }}
           >
@@ -118,7 +115,7 @@ const NavBar = () => {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ my: 2, color: "#393E46", display: "block" }}
               >
                 {page}
               </Button>
