@@ -35,21 +35,21 @@ const NavBar = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
   return (
-    <AppBar position="static"sx={{bgcolor:"#F7F7F7"}} >
-      <Container maxWidth="xl" >
-        <Toolbar disableGutters sx={{px:10}} >
+    <AppBar position="static" sx={{ bgcolor: "#F7F7F7" }}>
+      <Container maxWidth="xl">
+        <Toolbar sx={{ px: 10 }}>
           <Typography
-            variant="h6"
-            noWrap
-            component="a"
+            variant="h5"
             href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
               letterSpacing: ".3rem",
-              color: "#393E46",
+              color: "#121212",
               textDecoration: "none",
+              fontWeight: "900",
             }}
           >
             PIYAWUT
@@ -91,7 +91,7 @@ const NavBar = () => {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+
           <Typography
             variant="h5"
             noWrap
